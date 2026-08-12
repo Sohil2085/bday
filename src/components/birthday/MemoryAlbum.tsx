@@ -214,6 +214,12 @@ export default function MemoryAlbum() {
   const headerRef = useRef(null);
   const headerInView = useInView(headerRef, { once: true, margin: "-60px" });
 
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end end"],
+  });
+
   return (
     <section
       id="memories"
@@ -309,11 +315,44 @@ export default function MemoryAlbum() {
         </motion.div>
       </div>
 
-      {/* Photo Grid / Scrapbook */}
-      <div className="mx-auto max-w-md space-y-2">
-        {memories.map((memory, index) => (
-          <MemoryPhoto key={memory.image} memory={memory} index={index} />
-        ))}
+      {/* Photo Grid / Scrapbook with Connecting Thread */}
+      <div ref={containerRef} className="mx-auto max-w-md relative mt-12 pb-10">
+        {/* The glowing thread line */}
+        <div 
+          className="absolute left-1/2 top-10 bottom-10 w-[1.5px] -translate-x-1/2 z-0"
+          style={{ background: "rgba(201,169,110,0.1)" }}
+          aria-hidden="true"
+        >
+          <motion.div 
+            className="w-full h-full origin-top"
+            style={{ 
+              background: "linear-gradient(to bottom, transparent, var(--gold-light), var(--gold-dim), transparent)",
+              scaleY: scrollYProgress,
+              boxShadow: "0 0 10px rgba(201,169,110,0.5)"
+            }}
+          />
+        </div>
+
+        {/* Photos */}
+        <div className="relative z-10 space-y-2">
+          {memories.map((memory, index) => (
+            <div key={memory.image} className="relative">
+              {/* Connecting dot on the thread */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full z-0"
+                style={{ 
+                  background: "var(--gold)",
+                  boxShadow: "0 0 8px rgba(201,169,110,0.8)"
+                }}
+              />
+              <MemoryPhoto memory={memory} index={index} />
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Bottom decorative flourish */}

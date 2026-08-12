@@ -93,6 +93,30 @@ export const memories = [
     rotation: 2,
     style: "polaroid" as const,
   },
+  {
+    image: "/photos/memory-09.JPG",
+    caption: "Through thick and thin.",
+    rotation: -2,
+    style: "full" as const,
+  },
+  {
+    image: "/photos/memory-10.JPG",
+    caption: "A bond like no other.",
+    rotation: 3,
+    style: "overlap" as const,
+  },
+  {
+    image: "/photos/memory-11.JPG",
+    caption: "The foundation of our family.",
+    rotation: -1,
+    style: "polaroid" as const,
+  },
+  {
+    image: "/photos/memory-12.JPG",
+    caption: "Here's to you, Papa.",
+    rotation: 2.5,
+    style: "overlap" as const,
+  },
 ];
 
 // ----------------------------------------------------------
