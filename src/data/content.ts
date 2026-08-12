@@ -42,53 +42,53 @@ export const journeyMilestones = [
 // ----------------------------------------------------------
 // PHOTO MEMORIES
 // Replace images in /public/photos/ with your own.
-// Filenames: memory-01.jpg, memory-02.jpg, etc.
+// Filenames: memory-01.JPG, memory-02.JPG, etc.
 // ----------------------------------------------------------
 export const memories = [
   {
-    image: "/photos/memory-01.jpg",
+    image: "/photos/memory-01.JPG",
     caption: "Where the story began.",
     rotation: -3,
     style: "polaroid" as const,
   },
   {
-    image: "/photos/memory-02.jpg",
+    image: "/photos/memory-02.JPG",
     caption: "A moment worth remembering.",
     rotation: 2,
     style: "full" as const,
   },
   {
-    image: "/photos/memory-03.jpg",
+    image: "/photos/memory-03.JPG",
     caption: "The smiles that became memories.",
     rotation: -1.5,
     style: "polaroid" as const,
   },
   {
-    image: "/photos/memory-04.jpg",
+    image: "/photos/memory-04.JPG",
     caption: "Family. Always.",
     rotation: 3,
     style: "overlap" as const,
   },
   {
-    image: "/photos/memory-05.jpg",
+    image: "/photos/memory-05.JPG",
     caption: "Little moments, big love.",
     rotation: -2,
     style: "full" as const,
   },
   {
-    image: "/photos/memory-06.jpg",
+    image: "/photos/memory-06.JPG",
     caption: "Together is our favourite place.",
     rotation: 1.5,
     style: "polaroid" as const,
   },
   {
-    image: "/photos/memory-07.jpg",
+    image: "/photos/memory-07.JPG",
     caption: "Some memories never fade.",
     rotation: -2.5,
     style: "overlap" as const,
   },
   {
-    image: "/photos/memory-08.jpg",
+    image: "/photos/memory-08.JPG",
     caption: "Forever grateful.",
     rotation: 2,
     style: "polaroid" as const,
