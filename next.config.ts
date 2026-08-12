@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Allow placeholder images to render without optimization errors
+  // Remove this once you add real photos
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
