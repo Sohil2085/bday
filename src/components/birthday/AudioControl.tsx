@@ -50,22 +50,57 @@ export default function AudioControl() {
   if (!hasAudio) return null;
 
   return (
-    <motion.button
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1, delay: 2 }}
-      onClick={toggle}
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full border px-4 py-2.5 backdrop-blur-md transition-colors duration-300 sm:bottom-8 sm:right-8"
-      style={{
-        background: isPlaying
-          ? "rgba(201, 169, 110, 0.15)"
-          : "rgba(10, 14, 23, 0.7)",
-        borderColor: isPlaying
-          ? "rgba(201, 169, 110, 0.3)"
-          : "rgba(201, 169, 110, 0.15)",
-      }}
-      aria-label={isPlaying ? "Pause music" : "Play music"}
-    >
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-2 sm:bottom-8 sm:right-8">
+      {/* Jumping arrow prompt */}
+      <AnimatePresence>
+        {!isPlaying && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, y: [0, -6, 0] }}
+            exit={{ opacity: 0, scale: 0.8, transition: { duration: 0.3 } }}
+            transition={{
+              opacity: { delay: 4, duration: 1 },
+              y: { repeat: Infinity, duration: 1.5, ease: "easeInOut" },
+            }}
+            className="flex flex-col items-center"
+            style={{ color: "var(--gold-dim)" }}
+            aria-hidden="true"
+          >
+            <span className="mb-1 text-[10px] tracking-widest uppercase opacity-80">
+              Tap to play
+            </span>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M12 5v14M19 12l-7 7-7-7" />
+            </svg>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <motion.button
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 2 }}
+        onClick={toggle}
+        className="flex items-center gap-2 rounded-full border px-4 py-2.5 backdrop-blur-md transition-colors duration-300"
+        style={{
+          background: isPlaying
+            ? "rgba(201, 169, 110, 0.15)"
+            : "rgba(10, 14, 23, 0.7)",
+          borderColor: isPlaying
+            ? "rgba(201, 169, 110, 0.3)"
+            : "rgba(201, 169, 110, 0.15)",
+        }}
+        aria-label={isPlaying ? "Pause music" : "Play music"}
+      >
       {/* Music icon */}
       <svg
         width="16"
@@ -129,5 +164,6 @@ export default function AudioControl() {
         )}
       </AnimatePresence>
     </motion.button>
+    </div>
   );
 }
