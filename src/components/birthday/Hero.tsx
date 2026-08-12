@@ -18,22 +18,22 @@ export default function Hero() {
     }
 
     const timers = [
-      setTimeout(() => setPhase(1), 1000),   // particles visible
-      setTimeout(() => setPhase(2), 2000),   // "A little surprise..."
-      setTimeout(() => setPhase(3), 3500),   // "for someone very special."
-      setTimeout(() => setPhase(4), 5000),   // "50"
-      setTimeout(() => setPhase(5), 6500),   // reveal lines
-      setTimeout(() => setPhase(6), 8500),   // greeting
-      setTimeout(() => setPhase(7), 10000),  // scroll prompt
+      setTimeout(() => setPhase(1), 400),    // particles visible
+      setTimeout(() => setPhase(2), 800),    // "A little surprise..."
+      setTimeout(() => setPhase(3), 2400),   // "for someone very special."
+      setTimeout(() => setPhase(4), 4000),   // "50"
+      setTimeout(() => setPhase(5), 5200),   // reveal lines
+      setTimeout(() => setPhase(6), 6400),   // greeting
+      setTimeout(() => setPhase(7), 7400),  // scroll prompt
     ];
 
     return () => timers.forEach(clearTimeout);
   }, []);
 
   const fadeUp = {
-    initial: { opacity: 0, y: 20 },
+    initial: { opacity: 0, y: 15 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 1, ease: [0.22, 1, 0.36, 1] as const },
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const },
   };
 
   const scrollToJourney = () => {
@@ -72,7 +72,7 @@ export default function Hero() {
           <motion.p
             key="line1"
             {...fadeUp}
-            exit={{ opacity: 0, y: -10, transition: { duration: 0.5 } }}
+            exit={{ opacity: 0, y: -10, transition: { duration: 0.4 } }}
             className="font-serif text-lg tracking-wide sm:text-xl"
             style={{ color: "var(--text-muted)" }}
           >
@@ -85,7 +85,7 @@ export default function Hero() {
           <motion.p
             key="line2"
             {...fadeUp}
-            exit={{ opacity: 0, y: -10, transition: { duration: 0.5 } }}
+            exit={{ opacity: 0, y: -10, transition: { duration: 0.4 } }}
             className="font-serif text-lg tracking-wide sm:text-xl"
             style={{ color: "var(--text-muted)" }}
           >
@@ -99,7 +99,7 @@ export default function Hero() {
         <motion.h1
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] as const }}
           className="font-serif glow-gold-strong text-center font-light leading-none"
           style={{
             fontSize: "clamp(6rem, 25vw, 14rem)",
@@ -121,8 +121,8 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.8,
-                delay: i * 0.4,
-                ease: [0.22, 1, 0.36, 1],
+                delay: i * 0.25,
+                ease: [0.22, 1, 0.36, 1] as const,
               }}
               className="font-serif text-base tracking-wide sm:text-lg"
               style={{ color: "var(--text-muted)" }}
@@ -138,7 +138,7 @@ export default function Hero() {
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] as const }}
           className="font-serif glow-gold mt-8 text-center text-2xl font-medium sm:mt-12 sm:text-3xl"
           style={{ color: "var(--gold-light)" }}
         >
@@ -151,7 +151,7 @@ export default function Hero() {
         <motion.button
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           onClick={scrollToJourney}
           className="group mt-16 flex cursor-pointer flex-col items-center gap-3 border-none bg-transparent sm:mt-20"
           aria-label="Scroll to begin the journey"
