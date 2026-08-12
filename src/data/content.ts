@@ -46,77 +46,77 @@ export const journeyMilestones = [
 // ----------------------------------------------------------
 export const memories = [
   {
-    image: "/photos/memory-01.JPG",
+    image: "/photos/memory-01.JPEG",
     caption: "Where the story began.",
     rotation: -3,
-    style: "polaroid" as const,
-  },
-  {
-    image: "/photos/memory-02.JPG",
-    caption: "A moment worth remembering.",
-    rotation: 2,
     style: "full" as const,
   },
   {
-    image: "/photos/memory-03.JPG",
-    caption: "The smiles that became memories.",
-    rotation: -1.5,
+    image: "/photos/memory-02.JPEG",
+    caption: "A moment worth remembering.",
+    rotation: 2,
     style: "polaroid" as const,
   },
+  // {
+  //   image: "/photos/memory-03.JPEG",
+  //   caption: "The smiles that became memories.",
+  //   rotation: -1.5,
+  //   style: "full" as const,
+  // },
   {
-    image: "/photos/memory-04.JPG",
+    image: "/photos/memory-04.JPEG",
     caption: "Family. Always.",
     rotation: 3,
     style: "overlap" as const,
   },
   {
-    image: "/photos/memory-05.JPG",
+    image: "/photos/memory-05.JPEG",
     caption: "Little moments, big love.",
     rotation: -2,
     style: "full" as const,
   },
   {
-    image: "/photos/memory-06.JPG",
+    image: "/photos/memory-06.JPEG",
     caption: "Together is our favourite place.",
     rotation: 1.5,
     style: "polaroid" as const,
   },
   {
-    image: "/photos/memory-07.JPG",
+    image: "/photos/memory-07.JPEG",
     caption: "Some memories never fade.",
     rotation: -2.5,
     style: "overlap" as const,
   },
   {
-    image: "/photos/memory-08.JPG",
+    image: "/photos/memory-08.JPEG",
     caption: "Forever grateful.",
     rotation: 2,
     style: "polaroid" as const,
   },
-  {
-    image: "/photos/memory-09.JPG",
-    caption: "Through thick and thin.",
-    rotation: -2,
-    style: "full" as const,
-  },
-  {
-    image: "/photos/memory-10.JPG",
-    caption: "A bond like no other.",
-    rotation: 3,
-    style: "overlap" as const,
-  },
-  {
-    image: "/photos/memory-11.JPG",
-    caption: "The foundation of our family.",
-    rotation: -1,
-    style: "polaroid" as const,
-  },
-  {
-    image: "/photos/memory-12.JPG",
-    caption: "Here's to you, Papa.",
-    rotation: 2.5,
-    style: "overlap" as const,
-  },
+  // {
+  //   image: "/photos/memory-09.JPEG",
+  //   caption: "Through thick and thin.",
+  //   rotation: -2,
+  //   style: "full" as const,
+  // },
+  // {
+  //   image: "/photos/memory-10.JPEG",
+  //   caption: "A bond like no other.",
+  //   rotation: 3,
+  //   style: "overlap" as const,
+  // },
+  // {
+  //   image: "/photos/memory-11.JPEG",
+  //   caption: "The foundation of our family.",
+  //   rotation: -1,
+  //   style: "polaroid" as const,
+  // },
+  // {
+  //   image: "/photos/memory-12.JPEG",
+  //   caption: "Here's to you, Papa.",
+  //   rotation: 2.5,
+  //   style: "overlap" as const,
+  // },
 ];
 
 // ----------------------------------------------------------
